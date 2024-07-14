@@ -1,0 +1,1594 @@
+/********** 
+----------
+Project: Syrah wine shop
+Author: Abdullah al Noman
+----------
+__________
+
+Table of Content:
+
+1. NAVIGATION PART
+2. STORY PART
+3. PRODUCTS PART
+4. EVENTS PART
+5. DEAL OF THE WEEK PART
+6. UPDATE PART
+7. FOOTER PART
+__________
+
+**********/
+
+/* FONTS   FONTS   FONTS */
+@font-face {
+    font-family: "adine";
+    src: url(../Adine_Kimberg_Font/Adine_Kirnberg.woff);
+}
+
+/* COMMON CSS START */
+:root {
+    --primary-color: #b7c5a9;
+    --primary-support-color: #d2ddc8;
+    --secondary-color: #e4d2b9;
+    --secondary-support-color: #a78f6d;
+    --four-color: #444;
+    --two-color: #222;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.clear{
+    clear: both;
+}
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 99px;
+    color: #fff;
+    line-height: 1;
+    margin: -65px 0 18px !important;
+    font-weight: 500;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menutoggle{
+    width: 36px;
+    height: 30px;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(128, 128, 128, 0.312);
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.menutogglebar{
+    width: 80%;
+    background: white;
+    color: red;
+    height: 2.5px;
+    display: block;
+    border-radius: 20px;
+}
+
+/* COMMON CSS END */
+
+/* COMMON DESIGN CSS START */
+.syrah_btn {
+    padding: 20px 30px;
+    background: var(--primary-color);
+    text-align: center;
+    position: relative;
+    border: 0px none;
+    color: #fff;
+    transition: .3s ease-in;
+    -webkit-transition: .3s ease-in;
+    -moz-transition: .3s ease-in;
+    -ms-transition: .3s ease-in;
+    -o-transition: .3s ease-in;
+}
+
+.syrah_btn::after {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: #fff;
+    top: 50%;
+    right: -40px;
+    transition: .3s ease-in;
+    -webkit-transition: .3s ease-in;
+    -moz-transition: .3s ease-in;
+    -ms-transition: .3s ease-in;
+    -o-transition: .3s ease-in;
+}
+
+.syrah_btn:hover {
+    padding-right: 45px;
+}
+
+.syrah_btn:hover:after {
+    width: 75px;
+    right: -55px;
+}
+
+.common_heading {
+    margin-bottom: 10px;
+}
+
+.common_heading h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 44px;
+    text-transform: capitalize;
+    position: relative;
+    padding: 0 30px;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.common_heading h2:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 110px;
+    top: 50%;
+    left: 100%;
+}
+
+.common_heading h2:before {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 110px;
+    top: 50%;
+    right: 100%;
+}
+
+.common_tab {
+    position: relative;
+}
+
+.common_tab_bg {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    bottom: 17%;
+    z-index: 1;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 72px 18px rgba(0, 0, 0, 0.05);
+}
+
+.common_tab_bg img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.common_tab_box {
+    margin: 0 15px;
+    border: 1px solid #ddd;
+}
+
+/* COMMON DESIGN CSS END */
+
+
+/* ############### LANDING PAGE CSS START ############### */
+
+/* NAVIGATION PART CSS START */
+#home_nav {
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+#myNav {
+    padding: 45px 0;
+}
+
+.logo img {
+    width: 100%;
+}
+
+
+#myNav ul li a {
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 60px;
+    padding-right: 0;
+    transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -ms-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+}
+
+#myNav ul .nav-item a:hover,
+#myNav ul .nav-item a.nav_menu_active {
+    color: var(--primary-color) !important;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    background: #1D2228;
+    z-index: 9999999;
+    box-shadow: 0px 0px 191px 0px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0px 0px 191px 0px rgba(0, 0, 0, 0.06);
+}
+
+.icon_bar {
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    display: block;
+    margin: 5px 0;
+    position: relative;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+
+/* NAVIGATION PART CSS END */
+
+/* BANNER PART CSS START */
+#banner {
+    background: url('../images/Syrah_home_banner_bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.banner_text {
+    padding-top: 190px;
+    padding-bottom: 137px;
+}
+
+.banner_text span {
+    font-family: "adine";
+    color: #fff;
+    font-size: 60px;
+}
+
+.banner_text p {
+    color: #fff;
+    padding-bottom: 16px;
+}
+
+.lspace {
+    letter-spacing: 10px;
+}
+
+.banner_btn {
+    margin-top: 40px;
+}
+
+.banner_right {
+    position: absolute;
+    top: 125px;
+    right: 20px;
+}
+
+/* BANNER PART CSS END */
+
+/* STORY PART CSS START */
+#story {
+    margin: 100px 0 30px;
+}
+
+.story_img img {
+    max-width: 100%;
+    margin-left: -30px;
+}
+
+.story_right {
+    margin-top: 135px;
+}
+
+.story_right p {
+    margin-top: 20px;
+}
+
+.story_heading h2 {
+    color: var(--secondary-color);
+    padding-left: 0;
+}
+
+.story_heading h2:after {
+    background: var(--secondary-color);
+}
+
+.story_heading h2:before {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.story_btn {
+    margin-top: 35px;
+    background: var(--secondary-color);
+}
+
+.story_btn:after {
+    background: var(--secondary-support-color);
+}
+
+/* STORY PART CSS END */
+
+/* PRODUCT PART CSS START */
+
+#products {
+    padding: 65px 0 100px;
+}
+
+.product_heading h2 {
+    color: var(--primary-color);
+}
+
+.product_heading h2:after,
+.product_heading h2:before {
+    background: var(--primary-support-color);
+}
+
+.products_panel {
+    margin-top: 40px;
+}
+
+.product_item {
+    padding-top: 180px;
+}
+
+.product_item img {
+    position: relative;
+    z-index: 1;
+}
+
+.product_details {
+    margin: 15px 0 20px;
+}
+
+.product_details span {
+    font-size: 20px;
+    color: #444444;
+    display: block;
+    text-transform: capitalize;
+}
+
+/* PRODUCT PART CSS END */
+
+/* EVENTS PART CSS START */
+
+#events {
+    padding: 60px 0;
+    background: url('../images/Syrah_home_event_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.event_heading h2 {
+    color: var(--secondary-color);
+}
+
+.event_heading h2:after,
+.event_heading h2:before {
+    background: var(--secondary-support-color);
+}
+
+.event_panel {
+    margin-top: 60px;
+}
+
+.event_panel .row {
+    justify-content: center;
+}
+
+.event_tab_bg {
+    bottom: 4%;
+}
+
+.event_tab_bg img {
+    opacity: .3;
+}
+
+.event_det {
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.event_det p {
+    color: var(--four-color);
+    font-size: 80px;
+    line-height: 1;
+}
+
+.event_det h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 34px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--four-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.event_det h3:after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.event_tab_box {
+    padding: 100px 0 80px;
+    margin: 0 22px;
+}
+
+.event_det span {
+    color: var(--two-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: block;
+    padding-top: 45px;
+}
+
+.event_det p.time {
+    font-size: 20px;
+}
+
+.event_det p.price {
+    font-size: 30px;
+}
+
+/* EVENTS PART CSS END */
+
+/* DEAL OF THE WEEK PART CSS START */
+#deal {
+    margin: 100px 0 30px;
+}
+
+.deal_img img {
+    max-width: 100%;
+    margin-left: -30px;
+}
+
+.deal_right p {
+    margin-top: 20px;
+    color: var(--four-color);
+}
+
+.deal_heading h2 {
+    color: var(--primary-color);
+    padding-left: 0;
+    text-transform: none;
+}
+
+.deal_heading h2:after {
+    background: var(--primary-color);
+}
+
+.deal_heading h2:before {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.deal_clock {
+    margin-top: 70px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0px 0px 72px 18px rgba(0, 0, 0, 0.05);
+}
+
+.deal_clock::after,
+.deal_clock::before {
+    position: absolute;
+    content: '';
+    background: #eee;
+}
+
+.deal_clock:after {
+    height: 120%;
+    width: 1px;
+    left: 50%;
+    top: -10%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.deal_clock:before {
+    width: 120%;
+    height: 1px;
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.deal_clock_count {
+    padding: 45px 0;
+}
+
+.deal_clock_count span,
+.deal_clock_count p {
+    font-family: "Abril Fatface", cursive;
+    text-transform: capitalize;
+    color: #444444;
+    line-height: 1;
+}
+
+.deal_clock_count span {
+    font-size: 46px;
+}
+
+.deal_clock_count p {
+    font-size: 24px;
+}
+
+/* DEAL OF THE WEEK PART CSS END */
+
+/* UPDATE PART CSS START */
+#update {
+    background: url('../images/Syrah_update_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 140%;
+    padding: 80px 0;
+}
+
+.update_heading h2 {
+    color: var(--primary-color);
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.update_heading h2:after {
+    background: var(--primary-color);
+}
+
+.update_col {
+    position: relative;
+    z-index: 1;
+    padding: 13px;
+}
+
+.update_col:before {
+    background: transparent;
+    border: 1px solid #ddd;
+    position: absolute;
+    content: '';
+    left: 25px;
+    right: 25px;
+    top: -20px;
+    bottom: -20px;
+    z-index: -1;
+}
+
+.update_tab {
+    cursor: pointer;
+}
+
+.update_tab:hover .update_tab_button {
+    background: var(--secondary-color);
+}
+
+.update_img img {
+    width: 100%;
+}
+
+.update_text {
+    position: relative;
+    padding: 60px 30px 20px;
+    background: white;
+}
+
+.update_tab_button {
+    transition: .3s;
+    padding: 20px 10px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    background: var(--primary-color);
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    right: 30px;
+    font-size: 15px;
+    color: #fff;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+.uptade_post_date {
+    margin-left: 20px;
+}
+
+.update_text h3 {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.update_text p {
+    color: var(--two-color);
+    padding: 15px 0 10px;
+}
+
+.update_post_read {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: var(--two-color);
+    position: relative;
+}
+
+.update_post_read::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #e4d2b9;
+    left: 105%;
+    top: 50%;
+    transition: .3s;
+    -webkit-transition: .3s;
+}
+
+.update_post_read:hover {
+    color: black;
+}
+
+.update_post_read:hover:after {
+    width: 50%;
+}
+
+.update_arrow_panel {
+    margin-top: 35px;
+}
+
+.update_arrow {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 70px;
+    color: var(--primary-color);
+    cursor: pointer;
+    left: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+.update_arrow:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* UPDATE PART CSS END */
+
+/* FOOTER PART CSS START */
+#footer {
+    background: url('../images/Syrah_footer_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 60px 0 0;
+}
+
+.foot_top {
+    padding-bottom: 30px;
+}
+
+.foot_head {
+    border-bottom: 1px solid #181c21;
+    padding-bottom: 30px;
+    margin-bottom: 25px;
+}
+
+.contact_info {
+    border-bottom: 1px solid #181c21;
+    padding: 30px 0;
+}
+
+.contact_info:last-child {
+    border-bottom: none;
+}
+
+.contact_info_icon {
+    color: white;
+    background: #e6d5be;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 21px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.contact_info_text {
+    color: #fff;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.footer_menu {
+    margin-top: 30px;
+}
+
+.footer_menu ul li a {
+    color: #fff;
+    font-size: 18px;
+    padding: 0 0 35px 50px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    display: inline-block;
+}
+
+.footer_menu ul li a:hover,
+.footer_menu ul li a.foot_menu_active {
+    color: #e6d5be !important;
+}
+
+.footer_usage {
+    padding-top: 30px;
+}
+
+.footer_mail form {
+    position: relative;
+}
+
+.footer_mail form input {
+    background: #1d2228;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 20px;
+    padding-right: 0;
+    width: 80%;
+}
+
+.footer_mail form input::placeholder {
+    color: var(--four-color);
+}
+
+.footer_mail button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    background: #e3d1b8;
+    color: var(--four-color);
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: .4s;
+    transition: .4s;
+    transform: translateY(-50%);
+}
+
+.footer_mail button:hover {
+    background: var(--primary-color);
+}
+
+.footer_map {
+    margin-top: 30px;
+    border: 5px solid #171a1e;
+}
+
+.footer_map img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.foot_end_content {
+    border-top: 1px solid #181c21;
+}
+
+.copyright p {
+    color: #fff;
+    padding-top: 20px;
+}
+
+.foot_social {
+    text-align: right;
+}
+
+.foot_social ul li {
+    display: inline-block;
+}
+
+.foot_social ul li a {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 20px 0;
+    width: 50px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #171a1e;
+    border-left: 1px solid #171a1e;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.foot_social ul li:last-child a {
+    border-right: 1px solid #171a1e;
+}
+
+.taptotop {
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    background-color: #1D2228;
+    display: block;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 5px;
+    z-index: 99;
+    transition: .4s;
+    -webkit-transition: .4s;
+}
+
+.taptotop:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+/* FOOTER PART CSS END */
+
+/* ############### LANDING PAGE CSS END ############### */
+
+
+/* ############### STORY PAGE CSS START ############### */
+
+
+/* BREADCRUMB PART CSS START */
+#breadcrumb {
+    background: url('../images/Syrah_footer_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 120px 0 100px;
+    margin-bottom: 180px;
+    position: relative;
+}
+
+/* #breadcrumb .container  {
+    position: absolute;
+} */
+
+#breadcrumb .bread_over {
+    position: absolute;
+    /* left: 6.6%;
+	top: 60%; */
+}
+
+.bcrumb {
+    padding: 55px 0px;
+    background: url('../images/Syrah_breadcrumb_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 72px 18px rgba(0, 0, 0, 0.05);
+}
+
+.bcrumb h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: var(--primary-color);
+    font-family: "Great Vibes", cursive;
+}
+
+.bcrumb ul li {
+    display: inline-block;
+    position: relative;
+    padding: 0 5px;
+}
+
+.bcrumb ul li a {
+    font-size: 18px;
+    color: var(--primary-color);
+    display: inline-block;
+}
+
+.bcrumb ul li:first-child a:after {
+    position: absolute;
+    content: '';
+    height: 80%;
+    width: 1px;
+    top: 12%;
+    left: 100%;
+    background: #444444;
+    transform: rotate(16deg);
+    -moz-transform: rotate(16deg);
+}
+
+.bcrumb ul li:first-child a {
+    color: #000;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.bcrumb ul li:first-child a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* BREADCRUMB PART CSS END */
+
+/* STORY PAGE STORY PART CSS START */
+.story_page .story_right {
+    margin-top: 0;
+}
+
+.story_editor {
+    padding-top: 50px;
+    font-size: 24px;
+    color: #b7c5a9;
+}
+
+/* STORY PAGE STORY PART CSS END */
+
+/* STORY PAGE ACHIEVEMENT PART CSS START */
+#achievement {
+    padding: 80px 0 50px;
+}
+
+.achievement_heading h2 {
+    color: var(--primary-color);
+    padding-left: 0;
+    padding-bottom: 10px;
+}
+
+.achievement_heading h2:after {
+    background-color: var(--primary-support-color);
+    height: 1px;
+}
+
+.achievement_point {
+    padding: 50px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.achievement_point:last-child {
+    border-bottom: 0;
+}
+
+.achievement_icon {
+    width: 120px;
+    height: 120px;
+    line-height: 120;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: url('../images/Syrah_storypage_achievement_points_bg.png');
+}
+
+.achievement_text {
+    padding-left: 30px;
+}
+
+.achievement_text h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #141414;
+}
+
+/* 
+.achievement_right{
+    background: url('../images/Syrah_storypage_achievement_cont_img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+/* STORY PAGE ACHIEVEMENT PART CSS END */
+
+/* ############### STORY PAGE CSS END ############### */
+
+/* ############### PRODUCTS PAGE CSS START ############### */
+
+/* PRODUCT PAGE PRODUCTS PART CSS START */
+.product_page_cont {
+    padding: 0 0 50px !important;
+}
+
+#page_counter ul {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#page_counter ul li {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 30px;
+}
+
+#page_counter ul li a {
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    line-height: 70px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    background: transparent;
+    margin: 0 5px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    color: var(--primary-color);
+}
+
+#page_counter ul li a.active,
+#page_counter ul li a:hover {
+    background: var(--primary-color);
+    color: #fff !important;
+}
+
+/* PRODUCT PAGE PRODUCTS PART CSS END */
+
+/*  ############## PRODUCTS PAGE CSS END ############### */
+
+/*  ############## LATEST NEWS PAGE CSS START ############### */
+
+/* LATEST PAGE BLOG PART CSS START */
+
+.blog_head h3 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #b7c5a9;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+.blog_status {
+    margin-bottom: 50px;
+}
+
+.blog_status p {
+    display: inline-block;
+}
+
+.blog_status a {
+    color: #999;
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+.blog_reactions p {
+    margin-left: 20px;
+}
+
+.quote {
+    background: var(--primary-color);
+    padding: 30px 0;
+    margin-bottom: 60px;
+}
+
+.quote p {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/* .blog_points ul {
+    padding: 20px 0;
+} */
+
+.blog_points ul li i {
+    color: var(--primary-color);
+}
+
+.blog_points ul li p {
+    margin: 0 0 15px 10px;
+    display: inline;
+}
+
+.blog_side_opt {
+    margin: 80px 0;
+}
+
+.blog_side_opt p {
+    color: #151515;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat Alternates', sans-serif;
+    line-height: 24px;
+    padding-right: 22px;
+    display: inline-block;
+}
+
+.blog_side_opt .tags a {
+    text-transform: capitalize;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    line-height: 24px;
+    color: var(--four-color);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.blog_side_opt .tags a:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.blog_side_opt .social_share a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #888;
+    font-size: 16px;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    transition: .4s;
+    -webkit-transition: .4s;
+}
+
+.blog_side_opt .social_share a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* LATEST PAGE BLOG PART CSS END */
+
+
+/* LATEST PAGE COMMENTS PART CSS START */
+#comments {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+/* .comments_head, */
+.comment_count,
+.form_head {
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+/* .comments_head, */
+.comment_count p,
+.form_head p {
+    font-size: 20px;
+    color: #151515;
+    font-weight: 500;
+}
+
+.comment_cont {
+    padding: 20px 0;
+}
+
+.commentors_img {
+    margin-right: 8px;
+}
+
+.commentors_img img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.commentors_name {
+    display: inline-block;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #151515;
+    display: block;
+}
+
+.comments_date {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    float: right
+}
+
+.comment_text p {
+    color: #444444;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+.share {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    transition: .4s;
+}
+
+.share:hover {
+    color: var(--primary-color);
+}
+
+.comment_form{
+    margin-top: 15px;
+}
+
+.comment_form input {
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+}
+
+.comment_form input::placeholder,
+.comment_form textarea::placeholder {
+    color: #777777;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Arimo', sans-serif;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.comment_form textarea {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    resize: none;
+    padding: 10px;
+}
+
+.comment_btn {
+    display: block;
+    width: 100%;
+    border: 0;
+    margin-top: 6px;
+    padding: 11px 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    background: #b7c5a9;
+    cursor: pointer;
+    transition: all linear .4s;
+    -webkit-transition: all linear .4s;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.comment_btn:hover {
+    background: #e3d1b8;
+    color: #fff;
+}
+
+.comment_form p {
+    color: #222222;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    margin: 5px 0;
+}
+
+/* LATEST PAGE COMMENTS PART CSS END */
+
+/*  ############## LATEST NEWS PAGE CSS END ############### */
+
+/*  ############## CONTACT PAGE CSS START ############### */
+
+/* CONTACT PAGE CONTACT PART CSS START */
+
+#contact {
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.contact_container {
+    position: relative;
+    top: 30px;
+}
+
+.contact_details {
+    background: #fff;
+    width: 100%;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0px 5px 100px 0px rgba(0, 0, 0, 0.08);
+    padding: 30px 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.single_cont {
+    padding: 30px 0;
+}
+
+.contact_details h3 {
+    font-family: "Arimo", sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.contact_details h3:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 150px;
+    top: 50%;
+    left: 100%;
+    background: var(--primary-color);
+}
+
+.contact_details p {
+    font-size: 18px;
+}
+
+.contact_img img {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: 90%;
+    height: 770px;
+}
+
+.response_form {
+    position: relative;
+}
+
+.response_cont {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+}
+
+.contact_form_heading h2 {
+    color: var(--secondary-color);
+}
+
+.contact_form_heading h2:after {
+    background: var(--secondary-color);
+}
+
+.response_form input,
+.response_form textarea {
+    border: 1px solid #eee;
+    margin-top: 20px;
+    padding: 20px 14px 14px;
+    width: 100%;
+}
+
+.response_form textarea {
+    height: 200px;
+    resize: none;
+}
+
+.response_form input::placeholder,
+.response_form textarea::placeholder {
+    color: #999;
+}
+
+.contact_btn {
+    padding: 20px 30px;
+    /* width: 13%; */
+    border: none;
+    background: var(--secondary-color);
+    color: #fff;
+    font-size: 18px;
+    margin: 14px 0 0 10px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    position: relative;
+}
+
+.contact_btn:after {
+    height: 1px;
+    width: 60px;
+    position: absolute;
+    content: '';
+    background: var(--secondary-support-color);
+    right: -35%;
+    top: 50%;
+}
+
+.contact_btn:hover {
+    padding-right: 45px;
+    /* width: 15%; */
+}
+
+/* CONTACT PAGE CONTACT PART CSS END */
+
+/*  ############## CONTACT PAGE CSS END ############### */
+
+/*  ############## ERROR PAGE CSS START ############### */
+
+/* ERROR PART CSS START */
+#error {
+    padding-bottom: 100px;
+}
+
+.error_img {
+    position: relative;
+}
+
+.error_text h3 {
+    font-size: 24px;
+    color: #444444;
+    font-weight: 400;
+    font-family: "Abril Fatface", cursive;
+}
+
+.error_text p {
+    margin-left: 40px;
+    margin-top: 15px;
+    color: #999999;
+    text-align: left;
+}
+
+.error_text {
+    position: absolute;
+    bottom: 25px;
+}
+
+/* .error_text .col-6:last-child {
+    left: 51%;
+} */
+
+.error_left {
+    text-align: right;
+    padding-right: 6px;
+}
+
+.error_right {
+    padding-left: 20px;
+}
+
+.error_right h3 {
+    padding-left: 10px;
+}
+
+.error_btn {
+    margin-top: 15px;
+    margin-right: 25px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: arimo;
+    display: inline-block;
+}
+
+.error_btn::after {
+    background-color: #96aa81;
+    left: -40px;
+}
+
+.error_btn:hover {
+    padding-right: 30px;
+    padding-left: 40px;
+    color: #fff;
+}
+
+.error_btn:hover:after {
+    width: 60px;
+}
+
+/* ERROR PART CSS END */
+
+/*  ############## ERROR PAGE CSS END ############### */
